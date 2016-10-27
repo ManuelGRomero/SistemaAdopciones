@@ -1,0 +1,29 @@
+﻿@model List<Dueños>
+    @using SistemaAdopciones.Models
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista</h2>
+
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Nombre Completo</th>
+        <th>Edad</th>
+        <th>Ciudad</th>
+        <th>Domicilio</th>
+        <th>Teléfono</th>
+    </tr>
+
+    @foreach(var dueños in Model)
+    {
+        <tr>
+            <td>@(dueños.nombre+" "+dueños.apellidoP+" "+dueños.apellidoM)</td>
+            <td>@dueños.edad</td>
+            <td>@dueños.ciudad</td>
+            <td>@dueños.domicilio</td>
+            <td>@dueños.telefono</td>
+        </tr>
+    }
+</table>
+
