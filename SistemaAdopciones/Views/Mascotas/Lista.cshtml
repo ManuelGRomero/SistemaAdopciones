@@ -1,0 +1,43 @@
+﻿@model List<Mascotas>
+    @using SistemaAdopciones.Models
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista Mascotas</h2>
+@Html.ActionLink("Nueva Mascota","Crear")
+<table class="table table-striped table-hover">
+    <tr>
+        <th>Nombre</th>
+        <th>Raza</th>
+        <th>Sexo</th>
+        <th>Color</th>
+        <th>Edad</th>
+        <th>Señas Particulares</th>
+        <th>Enfermedades</th>
+        <th>Vacunas</th>
+        <th>Fecha Esterilización</th>
+        <th>Fecha Ingreso C.A.</th>
+        <th>Fecha Salida C.A.</th>
+        <th>Dueño</th>
+    </tr>
+
+    @foreach (var mascotas in Model)
+    {
+        <tr>
+            <td>@mascotas.nombre</td>
+            <td>@mascotas.raza</td>
+            <td>@mascotas.sexo</td>
+            <td>@mascotas.color</td>
+            <td>@mascotas.edad</td>
+            <td>@mascotas.señas</td>
+            <td>@mascotas.enfermedad</td>
+            <td>@mascotas.vacunas</td>
+            <td>@mascotas.fecheEsterilizacion</td>
+            <td>@mascotas.entradaCA</td>
+            <td>@mascotas.salidaCA</td>
+            @*<td></td>*@
+        </tr>
+    }
+</table>
+

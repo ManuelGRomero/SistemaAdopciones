@@ -1,0 +1,95 @@
+﻿@model Mascotas
+    @using SistemaAdopciones.Models;
+@{
+    ViewBag.Title = "Crear";
+}
+
+<h2>Crear</h2>
+
+<form action="Crear" method="post">
+    <div class="row">
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.nombre)
+            @Html.EditorFor(mascota => mascota.nombre,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Nombre" } })
+            @Html.ValidationMessageFor(mascota => mascota.nombre, "", new { @class = "error" })
+        </div>
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.raza)
+            @Html.EditorFor(mascota => mascota.raza,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Raza" } })
+            @Html.ValidationMessageFor(mascota => mascota.raza, "", new { @class = "error" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.sexo)
+            @Html.EditorFor(mascota => mascota.sexo,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Sexo" } })
+            @Html.ValidationMessageFor(mascota => mascota.sexo, "", new { @class = "error" })
+        </div>
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.color)
+            @Html.EditorFor(mascota => mascota.color,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Color" } })
+            @Html.ValidationMessageFor(mascota => mascota.color, "", new { @class = "error" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.edad)
+            @Html.EditorFor(mascota => mascota.edad,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Edad" } })
+            @Html.ValidationMessageFor(mascota => mascota.edad, "", new { @class = "error" })
+        </div>
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.señas)
+            @Html.EditorFor(mascota => mascota.señas,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Señas Particulares" } })
+            @Html.ValidationMessageFor(mascota => mascota.señas, "", new { @class = "error" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.enfermedad)
+            @Html.EditorFor(mascota => mascota.enfermedad,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Enfermedades" } })
+            @Html.ValidationMessageFor(mascota => mascota.enfermedad, "", new { @class = "error" })
+        </div>
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.vacunas)
+            @Html.EditorFor(mascota => mascota.vacunas,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Vacunas" } })
+            @Html.ValidationMessageFor(mascota => mascota.vacunas, "", new { @class = "error" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.fecheEsterilizacion)
+            @Html.EditorFor(mascota => mascota.fecheEsterilizacion,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Fecha de Esterilización" } })
+            @Html.ValidationMessageFor(mascota => mascota.fecheEsterilizacion, "", new { @class = "error" })
+        </div>
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.entradaCA)
+            @Html.EditorFor(mascota => mascota.entradaCA,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Fecha de Ingreso C.A." } })
+            @Html.ValidationMessageFor(mascota => mascota.entradaCA, "", new { @class = "error" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(mascota => mascota.salidaCA)
+            @Html.EditorFor(mascota => mascota.salidaCA,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Fecha de Salida C.A." } })
+            @Html.ValidationMessageFor(mascota => mascota.salidaCA, "", new { @class = "error" })
+        </div>
+    </div>
+
+        <div class="row">
+            <br /><button class="btn btn-primary" type="submit" value="Enviar">Enviar</button>
+
+            <p class="error">@ViewBag.MensajeError</p>
+        </div>
+</form>
+

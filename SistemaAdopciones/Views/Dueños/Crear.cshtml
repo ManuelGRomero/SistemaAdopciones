@@ -1,0 +1,66 @@
+﻿@model Dueños
+    @using SistemaAdopciones.Models
+@{
+    ViewBag.Title = "Crear";
+}
+
+<h2>Crear</h2>
+
+<form action="Crear" method="post">
+    <div class="row">
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(dueño=>dueño.nombre)
+            @Html.EditorFor(dueño => dueño.nombre,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Nombre" } })
+            @Html.ValidationMessageFor(dueño => dueño.nombre, "", new { @class = "error" })
+        </div>
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(dueño => dueño.apellidoP)
+            @Html.EditorFor(dueño => dueño.apellidoP,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Apellido Paterno" } })
+            @Html.ValidationMessageFor(dueño => dueño.apellidoP, "", new { @class = "error" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group Col-xs-6">
+            @Html.LabelFor(dueño => dueño.apellidoM)
+            @Html.EditorFor(dueño => dueño.apellidoM,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Apellido Materno" } })
+            @Html.ValidationMessageFor(dueño => dueño.apellidoM, "", new { @class = "error" })
+        </div>
+        <div class="form-group Col-xs-6">
+            @Html.LabelFor(dueño => dueño.edad)
+            @Html.EditorFor(dueño => dueño.edad,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Edad" } })
+            @Html.ValidationMessageFor(dueño => dueño.edad, "", new { @class = "error" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(dueño => dueño.ciudad)
+            @Html.EditorFor(dueño => dueño.ciudad,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Ciudad" } })
+            @Html.ValidationMessageFor(dueño => dueño.ciudad, "", new { @class = "error" })
+        </div>
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(dueño => dueño.domicilio)
+            @Html.EditorFor(dueño => dueño.domicilio,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Domicilio" } })
+            @Html.ValidationMessageFor(dueño => dueño.domicilio, "", new { @class = "error" })
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-xs-6">
+            @Html.LabelFor(dueño => dueño.telefono)
+            @Html.EditorFor(dueño => dueño.telefono,
+            new { htmlAttributes = new { required = "", @class = "form-control", placeholder = "Teléfono" } })
+            @Html.ValidationMessageFor(dueño => dueño.telefono, "", new { @class = "error" })
+        </div>
+    </div>
+    <div class="row">
+        <br /><button class="btn btn-primary" type="submit" value="Enviar">Enviar</button>
+
+        <p class="error">@ViewBag.MensajeError</p>
+    </div>
+</form>
+

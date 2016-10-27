@@ -7,44 +7,35 @@ using System.Web.Mvc;
 
 namespace SistemaAdopciones.Controllers
 {
-    public class DueñosController : Controller
+    public class MascotasController : Controller
     {
         ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Dueños
+        // GET: Mascotas
         public ActionResult Lista()
         {
+            var AllMascotas = db.mascotas.ToList();
 
-            var AllDueños = db.dueños.ToList();
-
-
-            return View(AllDueños);
+            return View(AllMascotas);
         }
         [HttpGet]
         public ActionResult Crear()
         {
-            var mascotas = db.mascotas;
-
-            SelectList MascotaID = new SelectList(mascotas, "MascotaID", "nombre");
-
-            ViewBag.MascotaID = MascotaID;
-
             return View();
         }
         [HttpPost]
-        public ActionResult Crear(Dueños nuevoDueño)
+        public ActionResult Crear(Mascotas nuevaMascota)
         {
             if (ModelState.IsValid)
             {
-                db.dueños.Add(nuevoDueño);
+                db.mascotas.Add(nuevaMascota);
 
                 db.SaveChanges();
 
                 return RedirectToAction("Lista");
             }
-            ViewBag.MensajeError = "Hubo un error, Verifique bien los datos";
-
-                return View();
+            ViewBag.MensajeError = "Hubo un Error, Revise los Datos";
+            return View();
         }
     }
 }
